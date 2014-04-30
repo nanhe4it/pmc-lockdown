@@ -17,7 +17,7 @@ Author URI: http://engineering.pmc.com/
  * @version 0.9.1 2011-08-16 Gabriel Koen
  */
 define('PMC_LOCKDOWN_I18N', 'pmc-lockdown');
-
+//define('PMC_LOCKDOWN', true);
 /**
  * Figure out whether we're in lockdown mode or not.  'muplugins_loaded' is the
  * first action available, and it runs before authentication checks.
@@ -26,11 +26,12 @@ define('PMC_LOCKDOWN_I18N', 'pmc-lockdown');
  * @version 0.9.1 2011-08-16 Gabriel Koen
  */
 function pmc_lockdown_init() {
-	if ( get_option('pmc_lockdown', false) ) {
+        $pmc_lockdown=get_option('pmc_lockdown', false);
+	if ($pmc_lockdown) {
 		define('PMC_LOCKDOWN', true);
 	}
 }
-add_action( 'muplugins_loaded','pmc_lockdown_init' );
+add_action( 'init','pmc_lockdown_init' );
 
 /**
  * Prevent comments while we're on lockdown

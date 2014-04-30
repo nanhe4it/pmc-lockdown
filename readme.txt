@@ -4,6 +4,8 @@ Tags: maintenance
 Requires at least: 3.2
 Tested up to: 3.2.1
 Stable tag: 0.9.5
+Modified By Nanhe Kumar <nanhe.kumar@gmail.com>
+Tested up to: 3.9
 
 Ability to enter maintenance lockdown mode: force-logout all non-administrators, prevent logins from non-administrators, and disable commenting.
 
